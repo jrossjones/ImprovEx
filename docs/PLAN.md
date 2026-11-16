@@ -89,7 +89,7 @@ Transposing to all 12 keys needs roughly C3 to F#5.
 - **Audition:** tap a suggestion to hear its scale played once over the song.
 
 ## Open questions (v1)
-1. Run the spike (see docs/SPIKE-TESTS.md): the results decide PWA vs native.
+1. Run the spike (see docs/SPIKE-TESTS.md): the results decide PWA vs native. The test page is in `spike/` (see spike/README.md).
 
 Libraries are vendored in `vendor/` (Tonal 6.4.3, Tone.js 15.1.22; see vendor/README.md).
 

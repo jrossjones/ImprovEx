@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1c1b22">
+<title>ImprovEx spike</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="spike.css">
+</head>
+<body>
+<header>
+  <strong>ImprovEx spike</strong><span id="ver" class="small"></span>
+  <nav>
+    <button data-tab="play" class="active">Play</button>
+    <button data-tab="listen">Listen</button>
+    <button data-tab="diag">Diag</button>
+    <button data-tab="tests">Tests</button>
+  </nav>
+</header>
+<main>
+  <section id="tab-play" class="tab active">
+    <div class="controls">
+      <select id="root" aria-label="Root"></select>
+      <select id="scale" aria-label="Scale"></select>
+      <select id="pads" aria-label="Pads"></select>
+      <label><input type="checkbox" id="fade" checked> tail fade</label>
+      <label><input type="checkbox" id="flash"> screen flash</label>
+    </div>
+    <div id="pan"></div>
+    <div id="notes" class="small center"></div>
+  </section>
+
+  <section id="tab-listen" class="tab">
+    <button id="rec" class="rec">Hold to listen</button>
+    <div class="meter"><div id="meterbar"></div></div>
+    <div id="rectime" class="big">0.0 s</div>
+    <div id="verdict" class="verdict"></div>
+    <div id="suggest"></div>
+    <canvas id="chroma" width="720" height="220"></canvas>
+    <pre id="recinfo"></pre>
+    <button id="playback" disabled>Play back last recording</button>
+  </section>
+
+  <section id="tab-diag" class="tab">
+    <button id="refreshDiag">Refresh</button>
+    <button id="reloadSamples">Reload samples</button>
+    <pre id="diagout"></pre>
+    <h3>Event log</h3>
+    <pre id="log"></pre>
+  </section>
+
+  <section id="tab-tests" class="tab">
+    <p class="small">Mark each test from docs/SPIKE-TESTS.md. Saved on this phone. Copy the results and paste them back to Claude.</p>
+    <div id="tests"></div>
+    <button id="copy">Copy results (markdown)</button>
+    <textarea id="results" rows="10" readonly></textarea>
+  </section>
+</main>
+<div id="flashov"></div>
+<script src="../vendor/tonal/tonal.min.js"></script>
+<script src="spike.js"></script>
+</body>
+</html>
